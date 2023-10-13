@@ -6,15 +6,18 @@ An efficient tool to enchance c++ development.
     ```c++  
     template <class E>
     ```  
-  + Constructors  
-    + > Creates a pipe line from a std::vector  
-      ```c++
-      pipe(const std::vector<E> &vector) : vector(vector){}  
-      ```
-    + > Deep clone from another pipe line.  
-      ```c++  
-      pipe(const pipe<E> &p) : vector({p.vector}{}
-      ```
+  + Constructors
+    + ```c++
+      public:
+      ``` 
+      + > Creates a pipe line from a std::vector  
+        ```c++
+        pipe(const std::vector<E> &vector) : vector(vector){}  
+        ```
+      + > Deep clone from another pipe line.  
+        ```c++  
+        pipe(const pipe<E> &p) : vector({p.vector}{}
+        ```
   + Members and methods  
     + ```c++
       protected:  
@@ -23,7 +26,7 @@ An efficient tool to enchance c++ development.
         ```c++
         const std::vector vector;
         ```
-      + > Check the given index that is valid.
+      + > Check the given index that is valid.  
         > @param index The index to be tested.  
         > @return Returns true if the given index is in range [0, this-> size()).  
         ```c++  
@@ -76,5 +79,10 @@ An efficient tool to enchance c++ development.
         > @return The element at the target index.
         ```c++
         E &at(const int& index) const;  
+        ```
+      + >  Calculates the average value according to the summation with long value that converts from ```std::function<long(E)>```.  
+        >  @param average Accepts element from this pipe line and convertes it into a long value returned.  
+        >  @return The long value converted from the elements.  
+        ```c++  
+        double average(const std::function<long(E)> &average) const;  
         ```  
-        
