@@ -112,7 +112,7 @@ An efficient namespace flow to enchance c++ development.
       + > Tests if all element matahces the condition with given ```std::function<bool(E)>```.  
         ```c++  
         //Tests if all elements are odd numbers.  
-        flow::pipe<int> p = flow::range<int>(0, 73);  
+        flow::pipe<int> p = flow::range(0, 73);  
         bool predicate = p.allMatch([](const int &element)-> bool{  
             return element % 2 != 0;  
         });
@@ -125,7 +125,7 @@ An efficient namespace flow to enchance c++ development.
       + > Tests if any element matahces the condition with given ```std::function<bool(E)>```.  
         ```c++  
         //Tests if any element is odd numbers.  
-        flow::pipe<int> p = flow::range<int>(0, 73);  
+        flow::pipe<int> p = flow::range(0, 73);  
         bool predicate = p.anyMatch([](const int &element)-> bool{  
           return element % 2 != 0;  
         });  
@@ -137,7 +137,7 @@ An efficient namespace flow to enchance c++ development.
         ```  
       + >  Gets an element from given index that is limited in [0, this-> size()).  
         ```c++  
-        flow::pipe<int> p = range<int>(0, 63); // size = 64  
+        flow::pipe<int> p = range(0, 63); // size = 64  
         const int e = p.at(-1); // e = 63  index = p.size() + (-1).  
         const int e1 = p.at(65); // e = 0 index = 65 % p.size().  
         ```  
