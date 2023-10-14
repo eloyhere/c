@@ -1,7 +1,25 @@
 # c  
 ## development document  
-An efficient tool to enchance c++ development.  
-+ > pipe  
+An efficient namespace flow to enchance c++ development.  
+```c++
+namespace flow  
+```  
++ > function  
+  + > Creates an empty pipe line.  
+    > @param E The type of the elements to be added.  
+    > @return An empty pipe line.  
+    ```c++  
+    pipe<E> empty();  
+    ```  
+  + > Creates a pipe line with given element repeated.  
+    > @param E The type of the element.  
+    > @param element The element to fill in a pipe line.  
+    > @param count The size of the pipe line.  
+    > @return Returns a pipe line with given element filled in.
+    ```c++
+    pipe<E> fill(const E &element, const int &count);
+    ```  
++ > class pipe  
   > A super powerful class to operate data group designed from ```java.util.stream.Stream```.  
   > All containers in std dose not support direct std::cout, but to this pipe line, it could be directly std::cout!
   ```c++
@@ -34,7 +52,7 @@ An efficient tool to enchance c++ development.
     ```c++  
     template <class E>
     ```  
-  + Constructors
+  + Constructor  
     + ```c++
       public:
       ``` 
