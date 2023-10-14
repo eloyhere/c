@@ -1,9 +1,9 @@
 # c  
 ## development document  
-An efficient namespace flow to enchance c++ development.  
 ```c++
 namespace flow  
-```  
+```
+An efficient namespace flow to enchance c++ development.  
 + function  
   + > Creates an empty pipe line.  
     > @param E The type of the elements to be added.  
@@ -15,13 +15,34 @@ namespace flow
     > @param E The type of the element.  
     > @param element The element to fill in a pipe line.  
     > @param count The size of the pipe line.  
-    > @return Returns a pipe line with given element filled in.
-    ```c++
-    pipe<E> fill(const E &element, const int &count);
+    > @return Returns a pipe line with given element filled in.  
+    ```c++  
+    pipe<E> fill(const E &element, const int &count);  
+    ```  
+  + > Creates a pipe line from a ```std::array<E, size_t>```.  
+    > @param E The type of the elements in ```std::array<E, size_t>```.  
+    > @param a The data source.  
+    > @return Returns a pipe line that contains the elements from the ```std::array<E, size_t>```.  
+    ```c++  
+    pipe<E> from(const std::list<E, size_t> a);  
+    ```  
+  + > Creates a pipe line from a ```std::list<E>```.  
+    > @param E The type of the elements in ```std::list<E>```.  
+    > @param l The data source.  
+    > @return Returns a pipe line that contains the elements from the ```std::list<E>```.  
+    ```c++  
+    pipe<E> from(const std::list<E> l);  
+    ```
+  + > Creates a pipe line from a ```std::vector<E>```.  
+    > @param E The type of the elements in ```std::vector<E>```.  
+    > @param v The data source.  
+    > @return Returns a pipe line that contains the elements from the ```std::vector<E>```.  
+    ```c++  
+    pipe<E> from(const std::vector<E> v);  
     ```  
 + class pipe  
   > A super powerful class to operate data group designed from ```java.util.stream.Stream```.  
-  > All containers in std dose not support direct std::cout, but to this pipe line, it could be directly std::cout!
+  > All containers in std dose not support direct ```std::cout```, but to this pipe line, it could be directly ```std::cout```!  
   ```c++
   std::cout << flow::range(0, 4);
   //std::ostream: [0, 1, 2, 3]  
