@@ -4,7 +4,7 @@ An efficient namespace flow to enchance c++ development.
 ```c++
 namespace flow  
 ```  
-+ > function  
++ function  
   + > Creates an empty pipe line.  
     > @param E The type of the elements to be added.  
     > @return An empty pipe line.  
@@ -19,7 +19,7 @@ namespace flow
     ```c++
     pipe<E> fill(const E &element, const int &count);
     ```  
-+ > class pipe  
++ class pipe  
   > A super powerful class to operate data group designed from ```java.util.stream.Stream```.  
   > All containers in std dose not support direct std::cout, but to this pipe line, it could be directly std::cout!
   ```c++
