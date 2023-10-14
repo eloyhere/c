@@ -3,7 +3,7 @@
 An efficient tool to enchance c++ development.  
 + > pipe  
   > A super powerful class to operate data group designed from ```java.util.stream.Stream```.  
-  > All containers in std dose not support direct std::cout, but to this pipe line, is could be std::cout!
+  > All containers in std dose not support direct std::cout, but to this pipe line, it could be directly std::cout!
   ```c++
   std::cout << flow::range(0, 4);
   //std::ostream: [0, 1, 2, 3]  
