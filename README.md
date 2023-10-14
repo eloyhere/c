@@ -81,8 +81,27 @@ An efficient tool to enchance c++ development.
         E &at(const int& index) const;  
         ```
       + >  Calculates the average value according to the summation with long value that converts from ```std::function<long(E)>```.  
+        ```c++  
+        double averageSize = flow::from<std::string>("1", "19", "173").average([](const std::string &element)-> long{
+        return element.size();  
+        });   
+        ```  
         >  @param average Accepts element from this pipe line and convertes it into a long value returned.  
         >  @return The long value converted from the elements.  
         ```c++  
         double average(const std::function<long(E)> &average) const;  
+        ```  
+      + > Adds the element returned by ```std::function<E(E, E)>``` which proceeses two elements in different pipe line of the same index, and then returns a new pipe line with length of shorter one between this and p.  
+      ```c++  
+      flow::pipe<int> a = flow::from<int>(1, 2, 3);  
+      flow::pipe<int> b = flow::from<int>(1, 2, 3, 4);
+      a.combine(b, [](const int &a, const int &b)-> int{
+      return a+b;  
+      });  
+      ```  
+        > @param E The type of internal elements.  
+        > @param p The pipe line to be mixed with.  
+        > @return The pipe line with each element returned by ```std::function<E(E,E)>```, which gets the size of the shorter size between this and p.  
+        ```c++  
+        pipe<E> combine(const pipe<E> &p, const std::function<E(E, E)> &combiner) const;  
         ```  
